@@ -6,30 +6,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class InsertingNewWords extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_inserting_new_words);
 
-        Button btnInsert = (Button) findViewById(R.id.button4);
-        Button btnDelete = (Button) findViewById(R.id.button5);
+        Button btnTranslate = (Button) findViewById(R.id.button7);
+        Button btnDelete = (Button) findViewById(R.id.button8);
 
-        btnInsert.setOnClickListener(new View.OnClickListener() {
+        btnTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, InsertingNewWords.class));
+                startActivity(new Intent(InsertingNewWords.this, MainActivity.class));
             }
         });
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DeleteWords.class));
+                startActivity(new Intent(InsertingNewWords.this, DeleteWords.class));
             }
         });
-
-
     }
 }
