@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
@@ -48,7 +49,12 @@ public class InsertingNewWords extends AppCompatActivity {
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PrintStream output = new PrintStream(openFileOutput("text.txt" ,MODE_PRIVATE));
+                PrintStream output = null;
+                try {
+                    output = new PrintStream(openFileOutput("text.txt" ,MODE_PRIVATE));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 String prevod = editMk.getText() + " /t " + editEng.getText();
                 output.println(prevod);
                 output.close();

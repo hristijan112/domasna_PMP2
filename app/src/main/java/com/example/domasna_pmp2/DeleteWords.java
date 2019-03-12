@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class DeleteWords extends AppCompatActivity {
 
@@ -15,6 +16,10 @@ public class DeleteWords extends AppCompatActivity {
 
         Button btnTranslate = (Button) findViewById(R.id.button9);
         Button btnInsert = (Button) findViewById(R.id.button10);
+        Button btnDelete = findViewById(R.id.button);
+
+        EditText editDelete = findViewById(R.id.editText4);
+
 
         btnTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
